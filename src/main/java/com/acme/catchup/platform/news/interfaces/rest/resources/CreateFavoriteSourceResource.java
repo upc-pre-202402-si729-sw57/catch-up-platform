@@ -1,7 +1,5 @@
 package com.acme.catchup.platform.news.interfaces.rest.resources;
 
-import com.acme.catchup.platform.news.domain.model.commands.CreateFavoriteSourceCommand;
-
 public record CreateFavoriteSourceResource(String newsApiKey, String sourceId) {
     public CreateFavoriteSourceResource {
         if (newsApiKey == null || newsApiKey.isBlank())

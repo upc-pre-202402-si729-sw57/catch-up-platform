@@ -10,7 +10,6 @@ import com.acme.catchup.platform.news.interfaces.rest.resources.CreateFavoriteSo
 import com.acme.catchup.platform.news.interfaces.rest.resources.FavoriteSourceResource;
 import com.acme.catchup.platform.news.interfaces.rest.transform.CreateFavoriteSourceCommandFromResourceAssembler;
 import com.acme.catchup.platform.news.interfaces.rest.transform.FavoriteSourceResourceFromEntityAssembler;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
