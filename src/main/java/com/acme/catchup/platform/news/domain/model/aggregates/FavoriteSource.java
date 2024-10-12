@@ -8,17 +8,17 @@
 package com.acme.catchup.platform.news.domain.model.aggregates;
 
 import com.acme.catchup.platform.news.domain.model.commands.CreateFavoriteSourceCommand;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.domain.AbstractAggregateRoot;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
 
+@Entity
+@EntityListeners(AuditingEntityListener.class)
 public class FavoriteSource extends AbstractAggregateRoot<FavoriteSource> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
