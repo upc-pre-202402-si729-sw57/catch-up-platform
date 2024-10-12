@@ -1,7 +1,7 @@
 package com.acme.catchup.platform.news.application.internal.queryservices;
 
 import com.acme.catchup.platform.news.domain.model.aggregates.FavoriteSource;
-import com.acme.catchup.platform.news.domain.model.queries.GetAllFavoriteSourceByNewsApiKeyQuery;
+import com.acme.catchup.platform.news.domain.model.queries.GetAllFavoriteSourcesByNewsApiKeyQuery;
 import com.acme.catchup.platform.news.domain.model.queries.GetFavoriteSourceByIdQuery;
 import com.acme.catchup.platform.news.domain.model.queries.GetFavoriteSourceByNewsApiKeyAndSourceIdQuery;
 import com.acme.catchup.platform.news.domain.services.FavoriteSourceQueryService;
@@ -20,7 +20,7 @@ public class FavoriteSourceQueryServiceImpl implements FavoriteSourceQueryServic
     }
 
     @Override
-    public List<FavoriteSource> handle(GetAllFavoriteSourceByNewsApiKeyQuery query) {
+    public List<FavoriteSource> handle(GetAllFavoriteSourcesByNewsApiKeyQuery query) {
         return favoriteSourceRepository.findAllByNewsApiKey(query.newsApiKey());
     }
 
