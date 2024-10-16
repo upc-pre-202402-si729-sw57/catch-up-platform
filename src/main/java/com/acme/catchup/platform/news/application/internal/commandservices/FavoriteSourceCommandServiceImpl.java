@@ -8,6 +8,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * FavoriteSourceCommandServiceImpl
+ * @summary
+ * The FavoriteSourceCommandServiceImpl class is responsible for handling the favorite source commands.
+ * It implements the FavoriteSourceCommandService interface.
+ * @see FavoriteSourceCommandService
+ * @since 1.0.0
+ */
 @Service
 public class FavoriteSourceCommandServiceImpl implements FavoriteSourceCommandService {
     private final FavoriteSourceRepository favoriteSourceRepository;
@@ -16,6 +24,7 @@ public class FavoriteSourceCommandServiceImpl implements FavoriteSourceCommandSe
         this.favoriteSourceRepository = favoriteSourceRepository;
     }
 
+    // @inheritdoc
     @Override
     public Optional<FavoriteSource> handle(CreateFavoriteSourceCommand command) {
         if (favoriteSourceRepository.existsByNewsApiKeyAndSourceId(command.newsApiKey(), command.sourceId()))

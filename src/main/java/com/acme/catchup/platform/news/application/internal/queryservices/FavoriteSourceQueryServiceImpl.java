@@ -11,6 +11,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * FavoriteSourceQueryServiceImpl
+ * @summary
+ * The FavoriteSourceQueryServiceImpl class is responsible for handling the favorite source queries.
+ * It implements the FavoriteSourceQueryService interface.
+ * @see FavoriteSourceQueryService
+ * @since 1.0.0
+ */
 @Service
 public class FavoriteSourceQueryServiceImpl implements FavoriteSourceQueryService {
     private final FavoriteSourceRepository favoriteSourceRepository;
@@ -19,16 +27,19 @@ public class FavoriteSourceQueryServiceImpl implements FavoriteSourceQueryServic
         this.favoriteSourceRepository = favoriteSourceRepository;
     }
 
+    // @inheritdoc
     @Override
     public List<FavoriteSource> handle(GetAllFavoriteSourcesByNewsApiKeyQuery query) {
         return favoriteSourceRepository.findAllByNewsApiKey(query.newsApiKey());
     }
 
+    // @inheritdoc
     @Override
     public Optional<FavoriteSource> handle(GetFavoriteSourceByIdQuery query) {
         return favoriteSourceRepository.findById(query.id());
     }
 
+    // @inheritdoc
     @Override
     public Optional<FavoriteSource> handle(GetFavoriteSourceByNewsApiKeyAndSourceIdQuery query) {
         return favoriteSourceRepository.findByNewsApiKeyAndSourceId(query.newsApiKey(), query.sourceId());

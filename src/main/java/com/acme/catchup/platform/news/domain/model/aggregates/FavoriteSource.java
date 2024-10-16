@@ -1,10 +1,4 @@
-/**
- * FavoriteSource Aggregate Root
- *
- * @summary
- * The FavoriteSource class is an aggregate root that represents a favorite news source.
- * It is responsible for handling the CreateFavoriteSourceCommand command.
- */
+
 package com.acme.catchup.platform.news.domain.model.aggregates;
 
 import com.acme.catchup.platform.news.domain.model.commands.CreateFavoriteSourceCommand;
@@ -17,6 +11,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
 
+/**
+ * FavoriteSource Aggregate Root
+ *
+ * @summary
+ * The FavoriteSource class is an aggregate root that represents a favorite news source.
+ * It is responsible for handling the CreateFavoriteSourceCommand command.
+ * @since 1.0.0
+ */
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 public class FavoriteSource extends AbstractAggregateRoot<FavoriteSource> {

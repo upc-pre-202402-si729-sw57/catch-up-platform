@@ -6,6 +6,10 @@ package com.acme.catchup.platform.news.domain.model.queries;
  * @param newsApiKey - the newsApiKey to get all favorite sources.
  */
 public record GetAllFavoriteSourcesByNewsApiKeyQuery(String newsApiKey) {
+    /**
+     * Validates the query.
+     * @throws IllegalArgumentException if the newsApiKey is null or empty
+     */
     public GetAllFavoriteSourcesByNewsApiKeyQuery {
         if (newsApiKey == null || newsApiKey.isBlank())
             throw new IllegalArgumentException("newsApiKey cannot be null or empty");
